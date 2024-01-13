@@ -17,7 +17,7 @@ export default function App() {
         style={styles.loginImage}
       />
       <View style={styles.subContainer}>
-          <Text >
+          <Text style={{fontSize:27,color:Colors.WHITE}}>
               Let's Find Professional Cleaning and Repair Services
           </Text>
       </View>
