@@ -3,6 +3,7 @@ import {
   Image,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
   requireNativeComponent,
 } from "react-native";
@@ -17,15 +18,29 @@ export default function App() {
         style={styles.loginImage}
       />
       <View style={styles.subContainer}>
-        <Text style={{ fontSize: 27, color: Colors.WHITE,
-          textAlign:"center" }}>
+        <Text
+          style={{ fontSize: 27, color: Colors.WHITE, textAlign: "center" }}
+        >
           Let's Find
-          <Text style={{fontWeight:'bold'}}> Professional Cleaning and Repair
-          </Text> Services
+          <Text style={{ fontWeight: "bold" }}>
+            {" "}
+            Professional Cleaning and Repair
+          </Text>{" "}
+          Services
         </Text>
-        <Text>
-            Best App to find services near you which deliver you a professional service
+        <Text style={{ fontSize:10,color:Colors.WHITE,textAlign:"center",marginTop:20 }}>
+          Best App to find services near you which deliver you a professional
+          service
         </Text>
+
+        <TouchableOpacity style={styles.button} onPress={()=>console.log("Button Click")}>
+            <Text style={{
+              textAlign:'center',
+              fontSize:17,
+              color:Colors.PRIMARY}}>
+                Let's Get Started
+            </Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -49,4 +64,10 @@ const styles = StyleSheet.create({
     borderTopRightRadius:30,
     padding:20
   },
+  button: {
+      padding:50,
+      color:Colors.WHITE,
+      borderRadius:99,
+      marginTop:40
+  }
 })
