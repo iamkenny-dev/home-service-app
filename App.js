@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     },
     subcontainer:{
         width:'100%',
-        
+        backgroudColor:Colors.PRIMARY
     }
 })
 
