@@ -4,16 +4,22 @@ import Login from "./App/Screens/LoginScreen/Login";
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Image source={require('./assets/images/login.png')} />
+    <View style={{alignItems:'center'}}>
+      <Image source={require('./assets/images/login.png')} 
+          style={styles.loginImage}
+      />
     </View>
   );
 }
 
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    paddingTop: 20,
-  },
-});
+    loginImage:{
+        width:230,
+        height:450,
+        marginTop:70,
+        borderWidth:4,
+        borderColor:'#000'
+    }
+})
+
