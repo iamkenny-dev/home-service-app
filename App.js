@@ -29,15 +29,15 @@ const styles = StyleSheet.create({
     height: 450,
     marginTop: 70,
     borderWidth: 4,
-    borderColor: Colors.BLACK,
+    borderColor:Colors.BLACK,
     borderRadius: 15,
   },
   subContainer: {
     width: "100%",
-    backgroudColor: Colors.PRIMARY,
+    backgroundColor:Colors.PRIMARY,
     height: "70%",
     marginTop:-20,
     borderTopLeftRadius:30,
-    borderTopRightRaius:30
+    borderTopRightRadius:30
   },
-});
+})
