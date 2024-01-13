@@ -17,9 +17,15 @@ export default function App() {
         style={styles.loginImage}
       />
       <View style={styles.subContainer}>
-          <Text style={{fontSize:27,color:Colors.WHITE}}>
-              Let's Find Professional Cleaning and Repair Services
-          </Text>
+        <Text style={{ fontSize: 27, color: Colors.WHITE,
+          textAlign:"center" }}>
+          Let's Find
+          <Text style={{fontWeight:'bold'}}> Professional Cleaning and Repair
+          </Text> Services
+        </Text>
+        <Text>
+            Best App to find services near you which deliver you a professional service
+        </Text>
       </View>
     </View>
   );
