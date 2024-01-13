@@ -17,7 +17,9 @@ export default function App() {
         style={styles.loginImage}
       />
       <View style={styles.subContainer}>
-
+          <Text >
+              Let's Find Professional Cleaning and Repair Services
+          </Text>
       </View>
     </View>
   );
@@ -38,6 +40,7 @@ const styles = StyleSheet.create({
     height: "70%",
     marginTop:-20,
     borderTopLeftRadius:30,
-    borderTopRightRadius:30
+    borderTopRightRadius:30,
+    padding:20
   },
 })
