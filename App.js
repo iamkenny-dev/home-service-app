@@ -28,19 +28,33 @@ export default function App() {
           </Text>{" "}
           Services
         </Text>
-        <Text style={{ fontSize:10,color:Colors.WHITE,textAlign:"center",marginTop:20 }}>
+        <Text
+          style={{
+            fontSize: 17,
+            color: Colors.WHITE,
+            textAlign: "center",
+            marginTop: 10,
+          }}
+        >
           Best App to find services near you which deliver you a professional
           service
         </Text>
 
-        <TouchableOpacity style={styles.button} onPress={()=>console.log("Button Click")}>
-            <Text style={{
-              textAlign:'center',
-              fontSize:17,
-              color:Colors.PRIMARY}}>
-                Let's Get Started
-            </Text>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => console.log("Button Click")}
+        >
+          <Text
+            style={{
+              textAlign: "center",
+              fontSize: 17,
+              color: Colors.PRIMARY
+            }}
+          >
+            Let's Get Started
+          </Text>
         </TouchableOpacity>
+
       </View>
     </View>
   );
@@ -65,9 +79,9 @@ const styles = StyleSheet.create({
     padding:20
   },
   button: {
-      padding:50,
-      color:Colors.WHITE,
+      padding:15,
+      backgroundColor:Colors.WHITE,
       borderRadius:99,
-      marginTop:40
+      marginTop:10
   }
 })
