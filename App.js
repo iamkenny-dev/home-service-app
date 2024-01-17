@@ -9,54 +9,58 @@ import {
 } from "react-native";
 import Login from "./App/Screens/LoginScreen/Login";
 import Colors from "./App/Utils/Colors";
+import { ClerkProvider } from "@clerk/clerk-expo";
 
 export default function App() {
   return (
-    <View style={{ alignItems: "center" }}>
-      <Image
-        source={require("./assets/images/login.png")}
-        style={styles.loginImage}
-      />
-      <View style={styles.subContainer}>
-        <Text
-          style={{ fontSize: 27, color: Colors.WHITE, textAlign: "center" }}
-        >
-          Let's Find
-          <Text style={{ fontWeight: "bold" }}>
-            {" "}
-            Professional Cleaning and Repair
-          </Text>{" "}
-          Services
-        </Text>
-        <Text
-          style={{
-            fontSize: 17,
-            color: Colors.WHITE,
-            textAlign: "center",
-            marginTop: 10,
-          }}
-        >
-          Best App to find services near you which deliver you a professional
-          service
-        </Text>
-
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => console.log("Button Click")}
-        >
+    <ClerkProvider
+      publishableKey={Constants.expoConfig.extra.clerkPublishableKey}
+    >
+      <View style={{ alignItems: "center" }}>
+        <Image
+          source={require("./assets/images/login.png")}
+          style={styles.loginImage}
+        />
+        <View style={styles.subContainer}>
+          <Text
+            style={{ fontSize: 27, color: Colors.WHITE, textAlign: "center" }}
+          >
+            Let's Find
+            <Text style={{ fontWeight: "bold" }}>
+              {" "}
+              Professional Cleaning and Repair
+            </Text>{" "}
+            Services
+          </Text>
           <Text
             style={{
-              textAlign: "center",
               fontSize: 17,
-              color: Colors.PRIMARY
+              color: Colors.WHITE,
+              textAlign: "center",
+              marginTop: 10,
             }}
           >
-            Let's Get Started
+            Best App to find services near you which deliver you a professional
+            service!
           </Text>
-        </TouchableOpacity>
 
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => console.log("Button Click")}
+          >
+            <Text
+              style={{
+                textAlign: "center",
+                fontSize: 17,
+                color: Colors.PRIMARY,
+              }}
+            >
+              Let's Get Started
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
+    </ClerkProvider>
   );
 }
 
