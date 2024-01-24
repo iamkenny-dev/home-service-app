@@ -41,7 +41,7 @@ export default function App() {
             }}
           >
             Best App to find services near you which deliver you a professional
-            service!
+            service
           </Text>
 
           <TouchableOpacity
