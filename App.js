@@ -1,91 +1,41 @@
-import { StatusBar } from "expo-status-bar";
-import {
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-  requireNativeComponent,
-} from "react-native";
-import Login from "./App/Screens/LoginScreen/Login";
-import Colors from "./App/Utils/Colors";
-import { ClerkProvider } from "@clerk/clerk-expo";
-
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View } from 'react-native';
+import Login from './App/Screens/LoginScreen/Login';
+import { ClerkProvider, SignedIn, SignedOut } from '@clerk/clerk-expo';
+import { NavigationContainer } from '@react-navigation/native';
+import TabNavigation from './App/Navigations/TabNavigation';
+import { useFonts } from 'expo-font';
 export default function App() {
-  return (
-    <ClerkProvider
-      publishableKey={Constants.expoConfig.extra.clerkPublishableKey}
-    >
-      <View style={{ alignItems: "center" }}>
-        <Image
-          source={require("./assets/images/login.png")}
-          style={styles.loginImage}
-        />
-        <View style={styles.subContainer}>
-          <Text
-            style={{ fontSize: 27, color: Colors.WHITE, textAlign: "center" }}
-          >
-            Let's Find
-            <Text style={{ fontWeight: "bold" }}>
-              {" "}
-              Professional Cleaning and Repair
-            </Text>{" "}
-            Services
-          </Text>
-          <Text
-            style={{
-              fontSize: 17,
-              color: Colors.WHITE,
-              textAlign: "center",
-              marginTop: 10,
-            }}
-          >
-            Best App to find services near you which deliver you a professional
-            service!
-          </Text>
+  const [fontsLoaded] = useFonts({
+    'outfit': require('./assets/fonts/Outfit-Regular.ttf'),
+    'outfit-medium': require('./assets/fonts/Outfit-Medium.ttf'),
+    'outfit-bold': require('./assets/fonts/Outfit-Bold.ttf'),
 
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => console.log("Button Click")}
-          >
-            <Text
-              style={{
-                textAlign: "center",
-                fontSize: 17,
-                color: Colors.PRIMARY,
-              }}
-            >
-              Let's Get Started
-            </Text>
-          </TouchableOpacity>
-        </View>
-      </View>
+  });
+  return (
+    <ClerkProvider publishableKey='pk_test_ZGVsaWNhdGUtaGVycmluZy0wLmNsZXJrLmFjY291bnRzLmRldiQ'>
+    <View style={styles.container}>
+     
+     {/* Sign In Component  */}
+      <SignedIn>
+      <NavigationContainer>
+        <TabNavigation/>
+        </NavigationContainer>
+      </SignedIn>
+      {/* SignOut  */}
+      <SignedOut>
+      <Login/>
+      </SignedOut>
+      <StatusBar style="auto" />
+    </View>
     </ClerkProvider>
   );
 }
 
 const styles = StyleSheet.create({
-  loginImage: {
-    width: 230,
-    height: 450,
-    marginTop: 70,
-    borderWidth: 4,
-    borderColor:Colors.BLACK,
-    borderRadius: 15,
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    
   },
-  subContainer: {
-    width: "100%",
-    backgroundColor:Colors.PRIMARY,
-    height: "70%",
-    marginTop:-20,
-    borderTopLeftRadius:30,
-    borderTopRightRadius:30,
-    padding:20
-  },
-  button: {
-      padding:15,
-      backgroundColor:Colors.WHITE,
-      borderRadius:99,
-      marginTop:10
-  }
-})
+});
